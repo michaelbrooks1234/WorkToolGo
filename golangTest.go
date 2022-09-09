@@ -16,25 +16,24 @@ func main() {
 	
 	// }
 	
-	// key := "Wuh1FF+QADZQ4z5dFFffc+Vl1WsTvvhzTURY2Bmg+jsw3FwDNDMY52MdBfWHzb_yJez5fmk+TWh6mwTwWPfyAA=="
+	// key := "t"
 	
-	// req, err := http.NewRequest("POST", "https://ft-nostress.chili-publish.online/rest-api/v1.2/resources/documents/c6018b06-47a3-448c-b180-194bde802f96/info?extended=false", nil)
+	// req, err := http.NewRequest("POST", "", nil)
 
 		client := &http.Client{}
 
 	   	postBody, _ := json.Marshal(map[string]string{
-      		"id":  "c6018b06-47a3-448c-b180-194bde802f96",
+      		"id":  "",
    		})
 
    		responseBody := bytes.NewBuffer(postBody)
 
 		//Leverage Go's HTTP Post function to make request
-   		req, err := http.NewRequest("https://ft-nostress.chili-publish.online/rest-api/v1.2/resources/documents/c6018b06-47a3-448c-b180-194bde802f96/info?extended=false", "application/json", responseBody)
+   		req, err := http.NewRequest("", "application/json", responseBody)
 		if(err != nil){
 			fmt.Println("pain")
 		}
 
-		req.Header.Add("api-key", "Wuh1FF+QADZQ4z5dFFffc+Vl1WsTvvhzTURY2Bmg+jsw3FwDNDMY52MdBfWHzb_yJez5fmk+TWh6mwTwWPfyAA==")
 		resp, err := client.Do(req)
 		
 		//Handle Error
